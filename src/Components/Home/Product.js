@@ -8,6 +8,7 @@ const Product = ({ id, title, img, amount, price }) => {
     <div className="product_indivi">
       <div className="product__description">
         <h4>{title}</h4>
+        <p>${price}</p>
         <small onClick={() => removeItem(id)}>remove</small>
       </div>
       <div className="product__image">

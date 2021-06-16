@@ -31,7 +31,6 @@ export const GlobalProvider = (props) => {
 
   useEffect(() => {
     dispatch({ type: "GET_TOTALS" });
-    console.log("Hello");
   }, [state.cart]);
   return (
     <GlobalContext.Provider

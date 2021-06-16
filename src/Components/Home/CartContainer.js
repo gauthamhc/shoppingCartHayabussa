@@ -5,25 +5,30 @@ import { GlobalContext } from "../GlobalContext/GlobalContext";
 
 const CartContainer = () => {
   const { cart, clearItem, total } = useContext(GlobalContext);
+  if (cart.length === 0) {
+    return (
+      <div className="cartEmpty">
+        <h2>Your Cart is empty</h2>
+      </div>
+    );
+  }
   return (
     <div className="cartContainer">
-      {!cart.length && (
-        <div className="cartEmpty">
-          <h2>Your Cart is empty</h2>
-        </div>
-      )}
-
       <div className="product">
         {cart.map((cartItem) => {
           return <Product {...cartItem} key={cartItem.id} />;
         })}
       </div>
-      <div className="total">
-        <p>Total</p>
-        <p>{total}</p>
-      </div>
+
+      {cart.length && (
+        <div className="total">
+          <p>Total</p>
+          <p>{total}</p>
+        </div>
+      )}
+
       <div className="clearall">
-        {cart.length && <button onClick={clearItem}>Clear all</button>}
+        <button onClick={clearItem}>Clear all</button>
       </div>
     </div>
   );
