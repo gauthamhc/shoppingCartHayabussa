@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  background-color: rgb(99, 97, 231);
+}
+
+.header > h2 {
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.header__ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__ul > li {
+  list-style: none;
+  margin: 10px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.fa-shopping-cart {
+  margin-right: 6px;
+}
